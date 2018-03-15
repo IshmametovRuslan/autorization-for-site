@@ -1,0 +1,7 @@
+.form-auth, .form-reg {
+	width: 300px;
+	margin: auto;
+}
+.form-auth label, .form-reg label {
+	display: block;
+}
