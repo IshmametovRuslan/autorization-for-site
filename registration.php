@@ -1,6 +1,6 @@
-<?php include 'functions.php';?>
+
 <div class="form-reg">
-	<form method="post" id="form-reg" action="<?php registration(); ?>">
+	<form method="post" id="form-reg" action="">
 		<div class="form-group">
 			<label for=""><h3>Имя</h3></label>
 			<input type="text" class="inputbox" placeholder="Введите имя" name="first_name" required >
@@ -18,7 +18,7 @@
 			<input type="password" class="inputbox" placeholder="Введите пароль" name="password_login" required >
 		</div>
 		<div class="btn-block">
-			<input class="send-button" name="sendButton" type="submit" value="Отправить">
+			<input class="send-button" name="regButton" type="submit" value="Отправить">
 		</div>
 	</form>
 </div>

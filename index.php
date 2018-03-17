@@ -1,7 +1,12 @@
 <?php
 
 include 'functions.php';
-file_connection('header.php');
-?>
-<h4><a href="autorization.php">Авторизация</a></h4><br>
-<h4><a href="registration.php">Регистрация</a></h4>
+
+get_file('header.php');
+
+
+if (is_user_logged_in() == true){
+	get_file('close_page.php');
+}else{
+	get_file('authorization.php');
+}
