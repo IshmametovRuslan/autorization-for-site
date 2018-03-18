@@ -16,6 +16,12 @@ if ( empty( $link ) ) {
 	}
 }
 
+/**
+ * Функция определения запршенной страницы
+ *
+ * @return string
+ *
+ */
 function get_page() {
 	$page = '';
 	if ( ! empty( $_GET['p'] ) ) {
@@ -55,6 +61,7 @@ function do_query( $query ) {
  * @param $password
  *
  * @return string
+ *
  */
 function password_hashing( $password ) {
 	$password = md5( md5( trim( $password ) ) );
@@ -104,9 +111,12 @@ function registration_user() {
 		}
 	}
 }
-
 registration_user();
 
+/**
+ * Функция авторизации пользователя
+ *
+ */
 function authorization_user() {
 	if ( isset( $_POST['authButton'] ) ) {
 		if ( ! empty( $_POST['email_login'] ) && ! empty( $_POST['password_login'] ) ) {
@@ -154,6 +164,10 @@ function is_user_logged_in() {
 	}
 }
 
+/**
+ * Функция выхода из профиля пользователя
+ *
+ */
 function user_logout() {
 	setcookie( 'user', '', time() - 60 * 60 * 24 );
 	header("Location: http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'] );
