@@ -16,6 +16,15 @@ if ( empty( $link ) ) {
 	}
 }
 
+function get_page() {
+	$page = '';
+	if ( ! empty( $_GET['p'] ) ) {
+		$page = $_GET['p'];
+	}
+
+	return $page;
+}
+
 /**
  * Функция выполнения запроса к БД
  *
@@ -109,14 +118,15 @@ function authorization_user() {
 
 			if ( $rows[0] == 1 ) {
 				setcookie( 'user', implode( ';', [ $email, $password ] ), time() + 60 * 60 * 24 );
-			}else{
+			} else {
 				echo 'Пользователя с таким логином и паролем не существует.';
 			}
-			header("Location: index.php");
+			header( "Location: index.php" );
 			die();
 		}
 	}
 }
+
 authorization_user();
 
 /**
@@ -142,6 +152,12 @@ function is_user_logged_in() {
 
 		return false;
 	}
+}
+
+function user_logout() {
+	setcookie( 'user', '', time() - 60 * 60 * 24 );
+	header("Location: http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'] );
+	die();
 }
 
 /**
