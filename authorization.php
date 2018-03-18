@@ -12,5 +12,5 @@
 			<input class="send-button" name="authButton" type="submit" value="Отправить">
 		</div>
 	</form>
-	<a href="<?php $_SERVER['PHP_SELF']?>?p=registration">Зарегестрироваться</a>
+	<a href="<?php $_SERVER['PHP_SELF'] ?>?p=registration">Зарегестрироваться</a>
 </div>

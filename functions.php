@@ -111,6 +111,7 @@ function registration_user() {
 		}
 	}
 }
+
 registration_user();
 
 /**
@@ -118,8 +119,11 @@ registration_user();
  *
  */
 function authorization_user() {
+
 	if ( isset( $_POST['authButton'] ) ) {
+
 		if ( ! empty( $_POST['email_login'] ) && ! empty( $_POST['password_login'] ) ) {
+
 			$email    = $_POST['email_login'];
 			$password = password_hashing( $_POST['password_login'] );
 			$sql      = "SELECT count(*) FROM user_reg WHERE email = '{$_POST['email_login']}'";
@@ -132,6 +136,7 @@ function authorization_user() {
 				echo 'Пользователя с таким логином и паролем не существует.';
 			}
 			header( "Location: index.php" );
+
 			die();
 		}
 	}
@@ -170,7 +175,7 @@ function is_user_logged_in() {
  */
 function user_logout() {
 	setcookie( 'user', '', time() - 60 * 60 * 24 );
-	header("Location: http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'] );
+	header( "Location: http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] );
 	die();
 }
 

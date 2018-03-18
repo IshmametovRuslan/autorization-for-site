@@ -9,4 +9,4 @@
 	<title>Authorization for site</title>
 </head>
 <body>
-<div class="container">
+<div class="main">
